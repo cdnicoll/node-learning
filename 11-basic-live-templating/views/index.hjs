@@ -1,0 +1,15 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+
+<body>
+    {{> header}} <!-- partial defined in server.js -->
+    {{#showTweets}}
+    {{> tweets}}
+    {{/showTweets}}
+    <script src="/js/main.js"></script>
+</body>
+
+</html>
