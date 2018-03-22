@@ -19,6 +19,16 @@
 //
 // - When authing we should hit: http://cdnicoll.com:3000/connect/[provider]
 //   as the auth endpoint
+//
+// - After auth, express-session will store a grant access object: http://cdnicoll.com:8000/
+//      "grant": {
+//        "provider": "goodreads",
+//        "request": {
+//        "oauth_token": "TOKEN",
+//        "oauth_token_secret": "SECRET"
+//        }
+//      }
+
 const express = require('express');
 const session = require('express-session');
 const logger = require('morgan');
@@ -36,7 +46,7 @@ app.use(session({secret: 'very secret'}));
 app.use(grant);
 
 app.get("/", function(req, res) {
-  res.send("hello world");
+  res.send(req.session);
 })
 
 app.get('/twitter_callback', function(req, res) {
