@@ -1,0 +1,16 @@
+{
+  "server": {
+    "protocol": "http",
+    "host": "localhost:8000"
+  },
+  "twitter":{
+    "key": "APPLICATION_KEY",
+    "secret": "APPLICATION_SECRET",
+    "callback": "/twitter_callback"
+  },
+  "goodreads":{
+    "key": "APPLICATION_KEY,
+    "secret": APPLICATION_SECRET,
+    "callback": "/goodreads_callback"
+  }
+}
